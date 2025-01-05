@@ -15,8 +15,6 @@ print(paded_frame)
 
 
 def compute_number_neighbors(paded_frame, index_line, index_column,):
-    new_paded_frame=paded_frame.copy() 
-    
     neighbors= [
      [0, -1],
      [1, -1],
@@ -36,3 +34,12 @@ def compute_number_neighbors(paded_frame, index_line, index_column,):
 
     return box_neighbor
 
+compute_number_neighbors()
+
+def compute_next_frame(paded_frame, index_line, index_column):
+    
+    
+    for index_line in range (1, paded_frame -1):
+        for index_column in range (1, paded_frame -1):
+            
+   
