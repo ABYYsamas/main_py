@@ -9,7 +9,7 @@ frame=numpy.array([
     [0, 0, 0, 0, 0, 0, 0]
 ])
 
-paded_frame = numpy.pad (frame, 1, mode='constant') # le code pour les bordures donnée par le prof
+paded_frame = numpy.pad (frame, 1, mode='constant') 
 
 print(paded_frame)
 
@@ -34,9 +34,10 @@ def compute_number_neighbors(paded_frame, index_line, index_column,):
 
     return box_neighbor
 
-def compute_next_frame(paded_frame, index_line, index_column):
-    paded_frame
-    new_paded_frame= numpy.array([
+    
+def compute_next_frame(frame):
+    paded_frame = numpy.pad(frame, 1, mode='constant')
+    new_paded_frame= numpy.array(frame[
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -45,7 +46,6 @@ def compute_next_frame(paded_frame, index_line, index_column):
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
 ])
-    
     
     for index_line in range (1, paded_frame -1):
         for index_column in range (1, paded_frame -1):
@@ -57,6 +57,12 @@ def compute_next_frame(paded_frame, index_line, index_column):
     else:
         if  total_of_neighbors ==3 :
          new_paded_frame [index_column,index_line]=1
-        return new_paded_frame
+                
+        frame= new_paded_frame
+        return frame
        
-       
+while not numpy.array_equal(frame, numpy.zeros_like(frame)):
+    frame = compute_next_frame()
+    print(frame)
+    
+      
